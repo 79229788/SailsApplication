@@ -4,8 +4,14 @@ module.exports = function(grunt) {
       options: {
         mainConfigFile: 'assets/js/config.js',
         baseUrl: "js",
-        appDir: 'assets/js',
-        dir: '.tmp/public/js'
+        appDir: 'assets',
+        dir: '.tmp/public',
+        optimizeCss: "standard",
+
+        modules: [
+          {name: 'config'},
+          //Other main modules. Generally, a page only a main module
+        ]
       }
     }
   });

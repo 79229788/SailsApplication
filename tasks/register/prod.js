@@ -13,8 +13,7 @@
  */
 module.exports = function(grunt) {
   grunt.registerTask('prod', [
-    'compileAssets',
-    'cssmin:modules',
+    'clean:dev',
     'requirejs:dev'
   ]);
 };

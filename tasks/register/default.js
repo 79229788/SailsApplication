@@ -23,7 +23,7 @@
  */
 module.exports = function (grunt) {
   grunt.registerTask('default', [
-    'compileAssets',
+    'clean:dev',
     'watch'
   ]);
 };
