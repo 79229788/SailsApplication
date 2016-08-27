@@ -11,6 +11,21 @@
 
 module.exports.http = {
 
+  /***************************************************************************
+   *                                                                          *
+   * Leancloud 当前用户登陆状态储存时间                                                 *
+   *                                                                          *
+   ***************************************************************************/
+
+  //customMiddleware: function(app){
+  //  var AV = require('leancloud-storage');
+  //  app.use(AV.Cloud.CookieSession({
+  //    secret: '577ca19ba633bd005be8ab77',
+  //    maxAge: 1000 * 60 * 60 * 24,
+  //    fetchUser: false
+  //  }));
+  //},
+
   /****************************************************************************
   *                                                                           *
   * Express middleware to use for every Sails request. To add custom          *
