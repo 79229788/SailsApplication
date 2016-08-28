@@ -47,7 +47,7 @@ module.exports.views = {
        * 绑定一些常用路径
        * */
       var paths = {
-        lib: '/libs',
+        lib: '/js/libs',
         script: '/js',
         style: '/styles',
         image: '/images',
