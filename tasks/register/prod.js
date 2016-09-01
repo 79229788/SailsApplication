@@ -13,7 +13,7 @@
  */
 module.exports = function(grunt) {
   grunt.registerTask('prod', [
-    'compileAssets',
-    'requirejs:dev'
+    //'compileAssets',
+    //'requirejs:dev'
   ]);
 };

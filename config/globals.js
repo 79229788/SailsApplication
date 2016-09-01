@@ -10,6 +10,11 @@
  */
 module.exports.globals = {
 
+  /**
+   * 发布版本号(用于客户端缓存清理)
+   */
+  ReleaseVersion: new Date().getTime()
+
   /****************************************************************************
   *                                                                           *
   * Expose the lodash installed in Sails core as a global variable. If this   *
