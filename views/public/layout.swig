@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title -%}{%- endblock %}</title>
+  <title>{% block title %}{% endblock %}-{{ sails.config.macros.KWebsiteName }}</title>
   {# 引入公共css文件 #}
-  {% include "stylesheets.swig" -%}
+  {% include "stylesheets.swig" %}
   {# 引入模块css文件 #}
-  {% block stylesheets -%}{%- endblock %}
+  {% block stylesheets %}{% endblock %}
 </head>
 <body>
 <div id="page">
-  {% if !hideHeader -%}
-  <div id="header">
-    {# 引入吊顶栏 #}
-    {% include "header.swig" -%}
-  </div>
-  {%- endif %}
+  {% if !hideHeader %}
+    <div id="header">
+      {# 引入吊顶栏 #}
+      {% include "header.swig" %}
+    </div>
+  {% endif %}
+
   <div id="content">
     {# 引入内容部分 #}
-    {% block content -%}{%- endblock %}
+    {% block content %}{% endblock %}
   </div>
-  <div id="footer">
-    {# 引入页脚部分 #}
-    {% block footer -%}{%- endblock %}
-  </div>
+
+  {% if !hideFooter %}
+    <div id="footer">
+      {# 引入页脚部分 #}
+      {% include "footer.swig" %}
+    </div>
+  {% endif %}
+
   {# 引入公共脚本 #}
   {% include "scripts.swig" %}
   {# 引入模块脚本 #}
-  {% block scripts -%}{%- endblock %}
+  {% block scripts %}{% endblock %}
 </div>
 
 </body>

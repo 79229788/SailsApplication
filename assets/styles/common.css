@@ -1,0 +1,187 @@
+/* line 3, ../sass/common.scss */
+html {
+  margin: 0;
+}
+
+/* line 4, ../sass/common.scss */
+body {
+  padding: 0;
+  background: transparent;
+  position: relative;
+  z-index: 2;
+  -webkit-user-select: auto;
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  min-height: 20px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #555;
+  font-size: 1em;
+}
+
+/* line 5, ../sass/common.scss */
+body:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 6, ../sass/common.scss */
+body, body:focus {
+  outline: transparent solid 0;
+}
+
+/* line 7, ../sass/common.scss */
+body {
+  position: relative;
+  -webkit-user-select: auto;
+  background: 0 0;
+}
+
+/* line 8, ../sass/common.scss */
+body [contenteditable="false"] {
+  -webkit-user-select: none;
+}
+
+/* line 9, ../sass/common.scss */
+body [contenteditable="true"] {
+  outline: transparent solid 0;
+}
+
+/* line 10, ../sass/common.scss */
+body a {
+  -webkit-user-select: auto;
+}
+
+/* line 11, ../sass/common.scss */
+body p {
+  margin: 6px 0;
+}
+
+/* line 12, ../sass/common.scss */
+body strong {
+  font-weight: 700;
+}
+
+/* line 13, ../sass/common.scss */
+body ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 14, ../sass/common.scss */
+body ul li {
+  list-style: none;
+}
+
+/* line 15, ../sass/common.scss */
+body table {
+  border: 0;
+  border-collapse: collapse;
+  empty-cells: show;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+
+/* line 16, ../sass/common.scss */
+body table tr {
+  -webkit-user-select: none;
+}
+
+/* line 17, ../sass/common.scss */
+body table td, body table th {
+  -webkit-user-select: text;
+}
+
+/* line 18, ../sass/common.scss */
+body table td, body table th {
+  border: 1px solid #dddddd;
+}
+
+/* line 19, ../sass/common.scss */
+body table td:empty, body table th:empty {
+  height: 20px;
+}
+
+/* line 20, ../sass/common.scss */
+body table th {
+  background: #e6e6e6;
+}
+
+/* line 21, ../sass/common.scss */
+body hr {
+  clear: both;
+  -webkit-user-select: none;
+  break-after: page;
+}
+
+/* line 22, ../sass/common.scss */
+body pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* line 23, ../sass/common.scss */
+body[dir="rtl"] blockquote {
+  border-left-width: 0;
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: #5e35b1;
+  margin-right: 0;
+  padding-right: 5px;
+  padding-left: 0;
+}
+
+/* line 24, ../sass/common.scss */
+body[dir="rtl"] blockquote blockquote {
+  border-color: #00bcd4;
+}
+
+/* line 25, ../sass/common.scss */
+body[dir="rtl"] blockquote blockquote blockquote {
+  border-color: #43a047;
+}
+
+/* line 26, ../sass/common.scss */
+body blockquote {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: #5e35b1;
+  margin-left: 0;
+  padding-left: 5px;
+  color: #5e35b1;
+}
+
+/* line 27, ../sass/common.scss */
+body blockquote blockquote {
+  border-color: #00bcd4;
+  color: #00bcd4;
+}
+
+/* line 28, ../sass/common.scss */
+body blockquote blockquote blockquote {
+  border-color: #43a047;
+  color: #43a047;
+}
+
+/* line 30, ../sass/common.scss */
+.hide {
+  display: none;
+}
+
+/* line 31, ../sass/common.scss */
+.clear {
+  clear: both;
+}
+
+/* line 32, ../sass/common.scss */
+.fl-left {
+  float: left;
+}
+
+/* line 33, ../sass/common.scss */
+.fl-right {
+  float: right;
+}
