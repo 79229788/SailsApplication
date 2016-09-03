@@ -9,6 +9,7 @@ module.exports = function(grunt) {
         optimizeCss: "standard",
 
         modules: [
+          {name: 'requirejs', include: ['text']},
           {name: 'config'},
           //Other main modules. Generally, a page only a main module
         ]

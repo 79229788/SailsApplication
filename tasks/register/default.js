@@ -22,9 +22,20 @@
  *
  */
 module.exports = function (grunt) {
-  grunt.registerTask('default', [
-    'compileAssets',
-    //'requirejs:dev'
-    'watch'
-  ]);
+  var tasks = [];
+  // Debug Mode
+  if(require('../../config/debugs').debugs.debug) {
+    tasks = [
+      'compileAssets',
+      'watch'
+    ];
+  }else {
+    tasks = [
+      'clean:dev',
+      'compass',
+      'requirejs:dev',
+      'requirejs-md5'
+    ]
+  }
+  grunt.registerTask('default', tasks);
 };

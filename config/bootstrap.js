@@ -12,12 +12,5 @@
 module.exports.bootstrap = function(cb) {
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
-  // 项目启动时加载leancloud
-  var AV = require('leancloud-storage');
-  AV.init({
-    appId: sails.config.leancloud.APP_ID,
-    appKey: sails.config.leancloud.APP_KEY,
-    masterKey: sails.config.leancloud.MASTER_KEY
-  });
   cb();
 };

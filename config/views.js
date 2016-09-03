@@ -63,6 +63,17 @@ module.exports.views = {
           }
         }
       }
+      // 获取资源url
+      data.getJsUrl = function(url) {
+        var path = paths.script + '/'  + url;
+        var v = sails.config.versions[path];
+        return path + (v ? '?v=' + v : '');
+      };
+      data.getCssUrl = function(url) {
+        var path = paths.style + '/'  + url;
+        var v = sails.config.versions[path];
+        return path + (v ? '?v=' + v : '');
+      };
       // 补充extra
       swig_extras.useFilter(swig, 'split');
       /* Render Templates */
