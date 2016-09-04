@@ -65,7 +65,7 @@ sails lift
     > * mainConfigFile: requirejs主配置文件 -------------------------- (需在.tmp目录下)
     > * assetVersionFile: 资源版本文件 -------------------------------- (需在sails.config目录下)
 
-### 5. 使用约束 （以便正确的生成md5版本信息！！！）
+### 6. 使用约束 （以便正确的生成md5版本信息！！！）
 1. 在siwg模板中或前端都暴露了一个app全局变量：
     > * getJsUrl： 获取assets/style/下的资源路径
     > * getCssUrl: 获取assets/js/下的资源路径
