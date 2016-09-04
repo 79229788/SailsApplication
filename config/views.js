@@ -65,12 +65,13 @@ module.exports.views = {
       }
       // 获取资源url
       data.getJsUrl = function(url) {
-        var path = paths.script + '/'  + url;
+        var path = paths.script + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
         var v = sails.config.versions[path];
         return path + (v ? '?v=' + v : '');
       };
+
       data.getCssUrl = function(url) {
-        var path = paths.style + '/'  + url;
+        var path = paths.style + '/'  + (url.indexOf('.css') < 0 ? url + '.css' : url);
         var v = sails.config.versions[path];
         return path + (v ? '?v=' + v : '');
       };
