@@ -65,6 +65,15 @@ sails lift
     > * mainConfigFile: requirejs主配置文件 -------------------------- (需在.tmp目录下)
     > * assetVersionFile: 资源版本文件 -------------------------------- (需在sails.config目录下)
 
+1. 打包特别说明
+
+    > * 请在config/debugs中，开启调试模式和非调试模式
+    > * debug：true调试模式用于正常开发
+    > * debug：false非调试模式用于打包文件
+    > * 两者均用sails lift启动
+    > * 另外部署在服务器上的项目请一直使用sails lift--prod启动
+
+
 ### 6. 使用约束 （以便正确的生成md5版本信息！！！）
 1. 在siwg模板中或前端都暴露了一个app全局变量：
     > * getJsUrl： 获取assets/style/下的资源路径
