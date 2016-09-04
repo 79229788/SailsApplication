@@ -22,13 +22,13 @@ a Sails Application [框架详细教程查看sials官方文档](http://sailsjs.o
 
 ### 3. 初始化项目
 
-```shell
+```
 npm install
 ```
 
 ### 4. 项目启动
 
-```shell
+```
 sails lift
 ```
 
@@ -69,22 +69,20 @@ sails lift
 1. 在Swig模板中link引用css请使用：
 
     ```html
-    getCssUrl('assets/style/下的资源路径')
-    //例如：
+    <!-- getCssUrl('assets/style/下中的资源路径') 例如 -->
     <link href="{{ getCssUrl('page-home') }}" rel="stylesheet" type="text/css"/>
     ```
 
 1. 在Swig模板中script引用js请使用：
 
     ```html
-    getJsUrl('assets/js/下中的资源路径')
-    //例如：
+    <!-- getJsUrl('assets/js/下中的资源路径') 例如 -->
     <script src="{{ getJsUrl('views/page-home/main') }}"></script>
     ```
 
 1. 在Backbone View中获取html模板请使用：
 
-    ```html
+    ```javascript
     require(["text!template.html"], function(temp) {
         var html = _.template(temp)({ items: item });
         $(this.el).html(html);
