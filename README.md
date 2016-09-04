@@ -54,7 +54,8 @@ sails lift
         '.tmp/public/js/config.js',
         '.tmp/public/js/views',
         '.tmp/public/styles',
-        '.tmp/public/temps'
+        '.tmp/public/images',
+        '.tmp/public/templates'
       ],
       mainConfigFile: '.tmp/public/js/config.js',
       assetVersionFile: 'config/versions.js'
@@ -70,8 +71,8 @@ sails lift
     > * 请在config/debugs中，开启调试模式和非调试模式
     > * debug：true调试模式用于正常开发
     > * debug：false非调试模式用于打包文件
-    > * 两者均用sails lift启动, 而部署在服务器上的项目请一直使用sails lift--prod启动
-    > * 打包成功后, 单独提交.tmp目录到服务器, 服务器上项目重启
+    > * 两者均用sails lift启动， 而部署在服务器上的项目请一直使用sails lift--prod启动
+    > * 打包成功后，单独提交.tmp目录到服务器，服务器上项目重启
 
 
 ### 6. 使用约束 （以便正确的生成md5版本信息！！！）
