@@ -83,7 +83,7 @@ sails lift
 1. 在Backbone View中获取html模板请使用：
 
     ```javascript
-    require(["text!template.html"], function(temp) {
+    require(["text!templates/dem.html"], function(temp) {
         var html = _.template(temp)({ items: item });
         //do something
     });
