@@ -23,3 +23,11 @@ output_style = :expanded
 # preferred_syntax = :sass
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
+
+asset_cache_buster do |path, file|
+  if File.file?(file.path)
+    Digest::MD5.hexdigest(File.read(file.path))[0, 16]
+  else
+    $stderr.puts "WARNING: '#{File.basename(path)}' was not found (or cannot be read) in #{File.dirname(file.path)}"
+  end
+end

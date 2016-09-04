@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         var path = eachPath + f.split(eachPath)[1];
         if(!s.isDirectory(path)) {
           var content = fs.readFileSync(path, 'utf-8');
-          var version = md5(content);
+          var version = md5(content).substr(0, 16);
           var key = path.replace(tmpPath, '');
           versionObj[key] = version;
         }

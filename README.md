@@ -1,6 +1,6 @@
 # SailsApplication
 
-a Sails Application [框架详细教程查看sials官方文档](http://sailsjs.org/documentation/concepts/){:target="_blank"}
+a [Sails](http://sailsjs.org) application
 
 ### 1. 前端清单
 
@@ -41,7 +41,6 @@ sails lift
         {name: 'config'},
         //Other main modules. Generally, a page only a main module
         //其它的主模块文件。一般的，一个页面只有一个主模块文件
-        {name: 'views/page-home/main'}
     ]
     ```
     为每一个页面指定一个或多个主模块，相应的页面就只会加载所指定的模块，其依赖的文件则会打包在一起
@@ -65,34 +64,42 @@ sails lift
     > * mainConfigFile: requirejs主配置文件 -------------------------- (需在.tmp目录下)
     > * assetVersionFile: 资源版本文件 -------------------------------- (需在sails.config目录下)
 
-### 6. 部分约束
-1. 在Swig模板中link引用css请使用：
+### 5. 使用约束 （以便正确的生成md5版本信息！！！）
+1. 在Swig模板中link引用css，请使用：
 
     ```html
-    <!-- getCssUrl('assets/style/下中的资源路径') 例如 -->
+    getCssUrl('assets/style/下的资源路径')
+    //例如：
     <link href="{{ getCssUrl('page-home') }}" rel="stylesheet" type="text/css"/>
     ```
 
-1. 在Swig模板中script引用js请使用：
+1. 在Swig模板中script引用js，请使用：
 
     ```html
-    <!-- getJsUrl('assets/js/下中的资源路径') 例如 -->
+    getJsUrl('assets/js/下中的资源路径')
     <script src="{{ getJsUrl('views/page-home/main') }}"></script>
     ```
 
-1. 在Backbone View中获取html模板请使用：
+1. 在Backbone View中引用html模板，请使用：
 
     ```javascript
-    require(["text!templates/dem.html"], function(temp) {
+    require(["text!template.html"], function(temp) {
         var html = _.template(temp)({ items: item });
-        //do something
+        $(this.el).html(html);
     });
     ```
 
-1. 在Backbone View中异步加载css文件请使用：
+1. 在Backbone View中异步加载css文件，请使用：
 
     ```javascript
     require('css!styles/page-home');
+    ```
+
+1. 在Sass中引用图片url，请使用：
+
+    ```css
+    //image_url('') 例如
+    background: image_url('../images/logo.png') no-repeat;
     ```
 
 
