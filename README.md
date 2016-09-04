@@ -65,7 +65,7 @@ sails lift
     > * mainConfigFile: requirejs主配置文件 -------------------------- (需在.tmp目录下)
     > * assetVersionFile: 资源版本文件 -------------------------------- (需在sails.config目录下)
 
-1. 打包特别说明
+1. 打包特别说明! `务必注意`
 
     > * 请在config/debugs中，开启调试模式和非调试模式
     > * debug：true调试模式用于正常开发
