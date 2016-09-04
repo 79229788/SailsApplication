@@ -1,6 +1,6 @@
 # SailsApplication
 
-a Sails Application [框架详细教程查看sials官方文档](http://sailsjs.org/documentation/concepts/)
+a Sails Application [框架详细教程查看sials官方文档](http://sailsjs.org/documentation/concepts/){:target="_blank"}
 
 ### 1. 前端清单
 
@@ -22,20 +22,20 @@ a Sails Application [框架详细教程查看sials官方文档](http://sailsjs.o
 
 ### 3. 初始化项目
 
-```
+```shell
 npm install
 ```
 
 ### 4. 项目启动
 
-```
+```shell
 sails lift
 ```
 
 ### 5. requirejs打包配置
 1. task/config/requirejs.js
 
-    ```
+    ```javascript
     modules: [
         {name: 'requirejs', include: ['text']},
         {name: 'config'},
@@ -48,7 +48,7 @@ sails lift
 
 1. task/config/requirejs-md5.js
 
-    ```
+    ```javascript
     options: {
       md5Paths: [
         '.tmp/public/js/config.js',
@@ -65,10 +65,10 @@ sails lift
     > * mainConfigFile: requirejs主配置文件 -------------------------- (需在.tmp目录下)
     > * assetVersionFile: 资源版本文件 -------------------------------- (需在sails.config目录下)
 
-### 5. 部分约束
+### 6. 部分约束
 1. 在Swig模板中link引用css请使用：
 
-    ```
+    ```html
     getCssUrl('assets/style/下的资源路径')
     //例如：
     <link href="{{ getCssUrl('page-home') }}" rel="stylesheet" type="text/css"/>
@@ -76,14 +76,15 @@ sails lift
 
 1. 在Swig模板中script引用js请使用：
 
-    ```
+    ```html
     getJsUrl('assets/js/下中的资源路径')
+    //例如：
     <script src="{{ getJsUrl('views/page-home/main') }}"></script>
     ```
 
-1. 在Backbone View中引用html模板请使用：
+1. 在Backbone View中获取html模板请使用：
 
-    ```
+    ```html
     require(["text!template.html"], function(temp) {
         var html = _.template(temp)({ items: item });
         $(this.el).html(html);
@@ -92,7 +93,7 @@ sails lift
 
 1. 在Backbone View中异步加载css文件请使用：
 
-    ```
+    ```javascript
     require('css!styles/page-home');
     ```
 
