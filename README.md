@@ -41,6 +41,7 @@ sails lift
         {name: 'config'},
         //Other main modules. Generally, a page only a main module
         //其它的主模块文件。一般的，一个页面只有一个主模块文件
+        {name: 'views/page-home/main'}
     ]
     ```
     为每一个页面指定一个或多个主模块，相应的页面就只会加载所指定的模块，其依赖的文件则会打包在一起
