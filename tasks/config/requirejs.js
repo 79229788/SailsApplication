@@ -12,6 +12,7 @@ module.exports = function(grunt) {
           {name: 'requirejs', include: ['text']},
           {name: 'config'},
           //Other main modules. Generally, a page only a main module
+          {name: 'views/page-home/main'}
         ]
       }
     }

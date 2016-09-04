@@ -18,7 +18,12 @@
 module.exports = function(grunt) {
   grunt.config.set('requirejs-md5', {
     options: {
-      md5Paths: ['.tmp/public/js/config.js', '.tmp/public/js/views', '.tmp/public/styles', '.tmp/public/temps'],
+      md5Paths: [
+        '.tmp/public/js/config.js',
+        '.tmp/public/js/views',
+        '.tmp/public/styles',
+        '.tmp/public/temps'
+      ],
       mainConfigFile: '.tmp/public/js/config.js',
       assetVersionFile: 'config/versions.js'
     }
