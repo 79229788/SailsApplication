@@ -4,12 +4,12 @@ a [Sails](http://sailsjs.org) application
 
 ### 1. 前端清单
 
-1. sails + swig -------------- //node框架、模板引擎
-1. compass+sass -------------- //css预处理器
-1. backbone ------------------ //用来mvc构架
-1. jqurey/zepto -------------- //操作dom
-1. underscore ---------------- //用于模板渲染
-1. requirejs ----------------- //用来模块化
+> * sails + swig -------------- //node框架、模板引擎
+> * compass+sass ---------- //css预处理器
+> * backbone ---------------- //用来mvc构架
+> * jqurey/zepto ------------- //操作dom
+> * underscore -------------- //用于模板渲染
+> * requirejs ----------------- //用来模块化
 
 
 ### 2. 全局安装项目
@@ -17,8 +17,8 @@ a [Sails](http://sailsjs.org) application
 > * nodejs(官网下载包安装)
 > * gem install compass -------------- //css预处理
 > * npm -g bower --------------------- //js包管理
-> * npm -g install sails ------------- //nodejs框架
-> * npm -g grunt-cli ----------------- //grunt命令行（可选）
+> * npm -g install sails --------------- //nodejs框架
+> * npm -g grunt-cli ------------------ //grunt命令行（可选）
 
 ### 3. 初始化项目
 
