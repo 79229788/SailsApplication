@@ -85,7 +85,7 @@ sails lift
     ```javascript
     require(["text!template.html"], function(temp) {
         var html = _.template(temp)({ items: item });
-        $(this.el).html(html);
+        //do something
     });
     ```
 
