@@ -1,6 +1,6 @@
 # SailsApplication
 
-An Empty Sails Application [sails文档请点击查看](http://sailsjs.org){:target="_blank"}
+An Empty Sails Application [sails文档请点击查看](http://sailsjs.org)
 
 ### 1. 前端清单
 
