@@ -65,27 +65,35 @@ sails lift
     > * assetVersionFile: 资源版本文件 -------------------------------- (需在sails.config目录下)
 
 ### 5. 使用约束 （以便正确的生成md5版本信息！！！）
-1. 在Swig模板中link引用css，请使用：
+1. 在siwg模板中或前端都暴露了一个app全局变量：
+    > * getJsUrl： 获取assets/style/下的资源路径
+    > * getCssUrl: 获取assets/js/下的资源路径
+    > * getImageUrl: 获取assets/images/下的资源路径
 
     ```html
-    getCssUrl('assets/style/下的资源路径')
-    //例如：
-    <link href="{{ getCssUrl('page-home') }}" rel="stylesheet" type="text/css"/>
+    <!-- 例如 swig模板中使用 -->
+    <link href="{{ app.getCssUrl('page-home') }}" rel="stylesheet" type="text/css"/>
+    <script src="{{ app.getJsUrl('views/page-home/main') }}"></script>
+    <img src="{{ app.getImageUrl('logo.png') }}">
+    ```
+    ```javascript
+    // 例如 BackBone View中使用
+    $('#logo').attr('src', app.getImageUrl('logo.png'))
     ```
 
 1. 在Swig模板中script引用js，请使用：
 
     ```html
-    getJsUrl('assets/js/下中的资源路径')
-    <script src="{{ getJsUrl('views/page-home/main') }}"></script>
+    <!-- getJsUrl('assets/js/下中的资源路径') 例如 -->
+    <script src="{{ app.getJsUrl('views/page-home/main') }}"></script>
     ```
 
 1. 在Backbone View中引用html模板，请使用：
 
     ```javascript
-    require(["text!template.html"], function(temp) {
+    require(["text!templates/dem.html"], function(temp) {
         var html = _.template(temp)({ items: item });
-        $(this.el).html(html);
+        //do something
     });
     ```
 

@@ -3,7 +3,7 @@
 {% block title %}首页{% endblock %}
 {# 相应css文件 #}
 {% block stylesheets %}
-<link href="{{ getCssUrl('page-home.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ app.getCssUrl('page-home') }}" rel="stylesheet" type="text/css"/>
 {% endblock %}
 {% block content %}
 <div class="layout">

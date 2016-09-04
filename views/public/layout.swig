@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>{% block title %}{% endblock %}-{{ sails.config.macros.KWebsiteName }}</title>
+  <title>{% block title %}{% endblock %}-{{ app.macros.KWebsiteName }}</title>
   {# 引入公共css文件 #}
   {% include "stylesheets.swig" %}
   {# 引入模块css文件 #}

@@ -1,1 +1,1 @@
-<link href="{{ getCssUrl('page.css') }}" rel="stylesheet" type="text/css"/>
+<link href="{{ app.getCssUrl('page') }}" rel="stylesheet" type="text/css"/>

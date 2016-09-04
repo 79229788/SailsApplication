@@ -22,6 +22,7 @@ module.exports = function(grunt) {
         '.tmp/public/js/config.js',
         '.tmp/public/js/views',
         '.tmp/public/styles',
+        '.tmp/public/images',
         '.tmp/public/temps'
       ],
       mainConfigFile: '.tmp/public/js/config.js',

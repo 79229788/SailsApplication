@@ -43,16 +43,16 @@ module.exports.views = {
       if (data.settings.env === 'development') {
         swig.setDefaults({cache: false});
       }
-      /*
-       * 绑定一些常用路径
-       * */
+      // 常用后端全局对象
+      data.app = {};
+      // 绑定一些常用路径
       var paths = {
-        lib: '/js/libs',
-        script: '/js',
-        style: '/styles',
-        image: '/images',
-        font: '/fonts',
-        icon: '/icons'
+        libs: '/js/libs',
+        scripts: '/js',
+        styles: '/styles',
+        images: '/images',
+        fonts: '/fonts',
+        icons: '/icons'
       };
       if (!data.path) {
         data.path = paths;
@@ -63,15 +63,23 @@ module.exports.views = {
           }
         }
       }
-      // 获取资源url
-      data.getJsUrl = function(url) {
-        var path = paths.script + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
+      data.app.paths = paths;
+      // 绑定常用信息
+      data.app.versions = sails.config.versions;
+      data.app.macros = sails.config.macros;
+      // 绑定资源url获取方法
+      data.app.getJsUrl = function(url) {
+        var path = paths.scripts + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
         var v = sails.config.versions[path];
         return path + (v ? '?v=' + v : '');
       };
-
-      data.getCssUrl = function(url) {
-        var path = paths.style + '/'  + (url.indexOf('.css') < 0 ? url + '.css' : url);
+      data.app.getCssUrl = function(url) {
+        var path = paths.styles + '/'  + (url.indexOf('.css') < 0 ? url + '.css' : url);
+        var v = sails.config.versions[path];
+        return path + (v ? '?v=' + v : '');
+      };
+      data.app.getImageUrl = function(url) {
+        var path = paths.images + '/'  + url;
         var v = sails.config.versions[path];
         return path + (v ? '?v=' + v : '');
       };
