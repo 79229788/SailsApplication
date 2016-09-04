@@ -82,13 +82,6 @@ sails lift
     $('#logo').attr('src', app.getImageUrl('logo.png'))
     ```
 
-1. 在Swig模板中script引用js，请使用：
-
-    ```html
-    <!-- getJsUrl('assets/js/下中的资源路径') 例如 -->
-    <script src="{{ app.getJsUrl('views/page-home/main') }}"></script>
-    ```
-
 1. 在Backbone View中引用html模板，请使用：
 
     ```javascript
