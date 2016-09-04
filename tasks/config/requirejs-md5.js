@@ -23,7 +23,7 @@ module.exports = function(grunt) {
         '.tmp/public/js/views',
         '.tmp/public/styles',
         '.tmp/public/images',
-        '.tmp/public/temps'
+        '.tmp/public/templates'
       ],
       mainConfigFile: '.tmp/public/js/config.js',
       assetVersionFile: 'config/versions.js'
