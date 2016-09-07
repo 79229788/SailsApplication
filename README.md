@@ -15,10 +15,10 @@ An Empty Sails Application [sails文档请点击查看](http://sailsjs.org)
 ### 2. 全局安装项目
 
 > * nodejs(官网下载包安装)
-> * gem install compass -------------- //css预处理
-> * npm -g bower --------------------- //js包管理
+> * gem install compass -------------- //css预处理 (ruby v2.1.4+ 国内需换淘宝镜像)
+> * npm -g install bower ------------- //js包管理
 > * npm -g install sails --------------- //nodejs框架
-> * npm -g grunt-cli ------------------ //grunt命令行（可选）
+> * npm -g install grunt-cli ---------- //grunt命令行（可选）
 
 ### 3. 初始化项目
 
@@ -80,6 +80,7 @@ sails lift
     > * getJsUrl： 获取assets/style/下的资源路径
     > * getCssUrl: 获取assets/js/下的资源路径
     > * getImageUrl: 获取assets/images/下的资源路径
+    > * macros: 获取项目常用数据
 
     ```html
     <!-- 例如 swig模板中使用 -->
