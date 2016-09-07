@@ -4,6 +4,7 @@ require.config({
     //libs
     requirejs: 'libs/requirejs/require',
     text: 'libs/text/text',
+    css: 'libs/require-css/css',
     'css-builder': 'libs/require-css/css-builder',
     normalize: 'libs/require-css/normalize',
     underscore: 'libs/underscore/underscore-min',
