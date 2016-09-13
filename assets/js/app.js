@@ -1,6 +1,6 @@
 define(function(require) {
   require([ app.action]);
-  // 获取资源url
+  //***获取资源url
   app.getJsUrl = function(url) {
     var path = app.paths.scripts + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
     var v = app.versions[path];
@@ -16,5 +16,18 @@ define(function(require) {
     var v = app.versions[path];
     return path + (v ? '?v=' + v : '');
   };
+  //***打印
+  app.print = (function() {
+    var log = console.log;
+    return function(exception) {
+      if(app.debug) {
+        if (typeof exception.stack !== 'undefined') {
+          log.call(console, exception.stack);
+        } else {
+          log.apply(console, arguments);
+        }
+      }
+    }
+  })();
 
 });
