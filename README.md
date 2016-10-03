@@ -108,10 +108,10 @@ sails lift
     require('css!styles/page-home');
     ```
 
-1. 在Sass中引用图片url，请使用：
+1. 在Sass中引用图片url和字体url，请使用：
 
     ```css
-    //image_url('') 例如
+    //image_url('')和font_url('') 例如
     background: image_url('../images/logo.png') no-repeat;
     ```
 
