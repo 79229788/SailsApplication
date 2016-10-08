@@ -1,4 +1,5 @@
 require.config({
+  urlArgs: 'dev=' + new Date().getTime(),
   baseUrl: 'js',
   paths: {
     //libs

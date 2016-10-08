@@ -59,6 +59,7 @@ module.exports = function (grunt) {
     if(requireConfigContent && requireConfigContent.indexOf('requirejs.s.contexts._.nameToUrl') < 0) {
       var scriptConfig = 'requirejs.s.contexts._.realNameToUrl=requirejs.s.contexts._.nameToUrl,requirejs.s.contexts._.nameToUrl=function(){var a=requirejs.s.contexts._.realNameToUrl.apply(this,arguments);a=a.replace("js/../",""),a="/"+a;var e=app.versions[a];return a+(e?"?v="+e:"")},';
       requireConfigContent = requireConfigContent.replace(/(require\.config\({[\s\S]*[^}\),]}\),)/g, '$1' + scriptConfig);
+      requireConfigContent = requireConfigContent.replace(/urlArgs:[\s\S][^,]*,/g, '');
       fs.writeFileSync(requireConfigPath, requireConfigContent);
     }
   }
