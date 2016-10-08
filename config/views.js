@@ -72,20 +72,24 @@ module.exports.views = {
       data.app.publicMacros = sails.config.macros.publicMacros;
       // 绑定资源url获取方法
       data.app.getJsUrl = function(url) {
-        var path = paths.scripts + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
-        var v = sails.config.versions[path];
-        return path + (v ? '?v=' + v : '');
+        const path = paths.scripts + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
+        const v = data.app.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        return path + v;
       };
       data.app.getCssUrl = function(url) {
-        var path = paths.styles + '/'  + (url.indexOf('.css') < 0 ? url + '.css' : url);
-        var v = sails.config.versions[path];
-        return path + (v ? '?v=' + v : '');
+        const path = paths.styles + '/'  + (url.indexOf('.css') < 0 ? url + '.css' : url);
+        const v = data.app.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        return path + v;
       };
       data.app.getImageUrl = function(url) {
-        var path = paths.images + '/'  + url;
-        var v = sails.config.versions[path];
-        return path + (v ? '?v=' + v : '');
+        const path = paths.images + '/'  + url;
+        const v = data.app.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        return path + v;
       };
+      //设置underscore过滤器
+      swig.setFilter('_', function() {
+        return _;
+      });
       // 补充extra
       swig_extras.useFilter(swig, 'split');
       /* Render Templates */
