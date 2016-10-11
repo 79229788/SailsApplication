@@ -68,7 +68,7 @@ module.exports.views = {
       // 绑定常用信息
       data.app.versions = sails.config.versions;
       data.app.debug = sails.config.debugs.debug;
-      data.app.macros = _.extend(sails.config.macros.privateMacros, sails.config.macros.publicMacros);
+      data.app.macros = _.extend({}, sails.config.macros.publicMacros, sails.config.macros.privateMacros);
       data.app.publicMacros = sails.config.macros.publicMacros;
       // 绑定资源url获取方法
       data.app.getJsUrl = function(url) {
