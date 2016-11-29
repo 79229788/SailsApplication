@@ -68,11 +68,12 @@ sails lift
 
 1. 打包特别说明! `务必注意`
 
-    > * 请在config/debugs中，开启调试模式和非调试模式
-    > * debug：true调试模式用于正常开发
-    > * debug：false非调试模式用于打包文件
+    > * 在config/debugs中有
+    > * debug：调试模式
+    > * package：打包时必须开启
+
     > * 两者均用sails lift启动， 而部署在服务器上的项目请一直使用sails lift--prod启动
-    > * 打包成功后，单独提交.tmp目录到服务器，服务器上项目重启
+    > * 打包时, 请仍使用sails lift进行项目重启, 耐心等待.tmp/public中build文件生成, 即代表打包完成。然后则可以部署代码到线上.
 
 
 ### 6. 使用约束 （以便正确的生成md5版本信息！！！）
