@@ -23,8 +23,7 @@
  */
 module.exports = function (grunt) {
   var tasks = [];
-  // Debug Mode
-  if(require('../../config/debugs').debugs.debug) {
+  if(!require('../../config/debugs').debugs.package) {
     tasks = [
       'compileAssets',
       'watch'
