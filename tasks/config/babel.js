@@ -11,7 +11,7 @@ module.exports = function(grunt){
         {
           expand: true,
           cwd: 'assets/js-es6/',
-          src: ['**/*.js', '!dependencies/**', '!libs/**'],
+          src: ['**/*.js'],
           dest: 'assets/js/'
         }
       ]

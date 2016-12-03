@@ -76,8 +76,9 @@ sails lift
 
 ### 6. 使用约束 （以便正确的生成md5版本信息！！！）
 1. 在siwg模板中或前端都暴露了一个app全局变量：
-    > * app.getJsUrl： 获取assets/style/下的资源路径
-    > * app.getCssUrl: 获取assets/js/下的资源路径
+    > * app.getJsUrl： 获取assets/js/下的资源路径
+    > * app.getLibUrl： 获取assets/libs/下的资源路径
+    > * app.getCssUrl: 获取assets/styles/下的资源路径
     > * app.getImageUrl: 获取assets/images/下的资源路径
     > * app.macros: 获取项目常用数据
 

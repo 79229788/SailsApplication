@@ -39,12 +39,7 @@ module.exports = function(grunt) {
       }]
     },
     devBabelExcludes: {
-      files: [{
-        expand: true,
-        cwd: 'assets/js-es6/',
-        src: ['dependencies/**', 'libs/**'],
-        dest: 'assets/js/'
-      }]
+      files: []
     }
   });
 

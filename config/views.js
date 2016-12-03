@@ -48,7 +48,7 @@ module.exports.views = {
       data.app = {};
       // 绑定一些常用路径
       let paths = {
-        libs: '/js/libs',
+        libs: '/libs',
         scripts: '/js',
         styles: '/styles',
         images: '/images',
@@ -75,6 +75,11 @@ module.exports.views = {
       // 绑定资源url获取方法
       data.app.getJsUrl = function(url) {
         const path = paths.scripts + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
+        const v = data.app.debugs.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        return path + v;
+      };
+      data.app.getLibUrl = function(url) {
+        const path = paths.libs + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
         const v = data.app.debugs.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
         return path + v;
       };

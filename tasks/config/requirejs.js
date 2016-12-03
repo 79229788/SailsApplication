@@ -7,7 +7,7 @@ module.exports = function(grunt) {
         appDir: 'assets',
         dir: '.tmp/public',
         optimizeCss: "standard",
-        fileExclusionRegExp: /^js-es6|sass/,
+        fileExclusionRegExp: /^js-es6|sass$/,
 
         modules: [
           {name: 'requirejs', include: ['text']},
