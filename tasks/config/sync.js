@@ -20,11 +20,18 @@ module.exports = function(grunt) {
   grunt.config.set('sync', {
     dev: {
       files: [{
-        cwd: './assets',
-        src: ['**/*.!(scss)'],
+        cwd: 'assets',
+        src: ['**/*', '!sass/**', '!js-es6/**'],
         dest: '.tmp/public'
       }]
-    }
+    },
+    devEs6: {
+      files: [{
+        cwd: 'assets/js-es6',
+        src: ['**/*'],
+        dest: 'assets/js'
+      }]
+    },
   });
 
   grunt.loadNpmTasks('grunt-sync');

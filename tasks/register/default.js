@@ -21,20 +21,26 @@
  *   http://sailsjs.org/documentation/anatomy/my-app/tasks/register/default-js
  *
  */
+const _ = require('underscore');
+const debugs = require('../../config/debugs');
 module.exports = function (grunt) {
-  var tasks = [];
-  if(!require('../../config/debugs').debugs.package) {
+  let tasks = [];
+  if(debugs.debugs.package) {
     tasks = [
-      'compileAssets',
-      'watch'
+      'clean:dev',
+      'compass',
+      'babel',
+      'requirejs:dev',
+      'requirejs-md5'
     ];
   }else {
     tasks = [
       'clean:dev',
       'compass',
-      'requirejs:dev',
-      'requirejs-md5'
-    ]
+      debugs.debugs.realTimeBabel ? 'babel' : null,
+      debugs.debugs.realTimeBabel ? 'copy:dev' : 'copy:devEs6',
+      'watch'
+    ];
   }
-  grunt.registerTask('default', tasks);
+  grunt.registerTask('default', _.compact(tasks));
 };

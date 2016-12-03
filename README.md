@@ -70,18 +70,16 @@ sails lift
 
     > * 在config/debugs中有
     > * debug：调试模式
-    > * package：打包时必须开启
-
-    > * 两者均用sails lift启动， 而部署在服务器上的项目请一直使用sails lift--prod启动
-    > * 打包时, 请仍使用sails lift进行项目重启, 耐心等待.tmp/public中build文件生成, 即代表打包完成。然后则可以部署代码到线上.
+    > * realTimeBabel：实时编译es6（无论任何时候，请一定都在js-es6目录下编写自己的js文件，另外一个js目录仅为编译后的输出目录）
+    > * package：打包时必须开启(具体说明请看其文件注视)
 
 
 ### 6. 使用约束 （以便正确的生成md5版本信息！！！）
 1. 在siwg模板中或前端都暴露了一个app全局变量：
-    > * getJsUrl： 获取assets/style/下的资源路径
-    > * getCssUrl: 获取assets/js/下的资源路径
-    > * getImageUrl: 获取assets/images/下的资源路径
-    > * macros: 获取项目常用数据
+    > * app.getJsUrl： 获取assets/style/下的资源路径
+    > * app.getCssUrl: 获取assets/js/下的资源路径
+    > * app.getImageUrl: 获取assets/images/下的资源路径
+    > * app.macros: 获取项目常用数据
 
     ```html
     <!-- 例如 swig模板中使用 -->

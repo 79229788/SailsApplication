@@ -14,14 +14,22 @@
  *   https://github.com/gruntjs/grunt-contrib-watch
  *
  */
+const _ = require('underscore');
+const debugs = require('../../config/debugs');
 module.exports = function(grunt) {
+
+  const assetsTasks = [
+    debugs.debugs.realTimeBabel ? 'babel' : null,
+    !debugs.debugs.realTimeBabel ? 'sync:devEs6' : null,
+    'sync:dev'
+  ];
 
   grunt.config.set('watch', {
     assets: {
       // Assets to watch:
       files: ['assets/**/*', 'tasks/pipeline.js', '!**/node_modules/**'],
       // When assets are changed:
-      tasks: ['syncAssets' ]
+      tasks: _.compact(assetsTasks)
     },
     compass: {
       files: ['assets/sass/{,*/}*.scss'],

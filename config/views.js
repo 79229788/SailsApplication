@@ -36,10 +36,10 @@ module.exports.views = {
 
     /* Function to handle render request */
     fn: function (path, data, cb) {
-      var _ = require('underscore');
+      let _ = require('underscore');
       /* Swig Renderer */
-      var swig = require('swig');
-      var swig_extras = require('swig-extras');
+      let swig = require('swig');
+      let swig_extras = require('swig-extras');
       // 保证我们在开发环境下每次更改swig不用重启sails
       if (data.settings.env === 'development') {
         swig.setDefaults({cache: false});
@@ -47,7 +47,7 @@ module.exports.views = {
       // 常用后端全局对象
       data.app = {};
       // 绑定一些常用路径
-      var paths = {
+      let paths = {
         libs: '/js/libs',
         scripts: '/js',
         styles: '/styles',
@@ -58,7 +58,7 @@ module.exports.views = {
       if (!data.path) {
         data.path = paths;
       } else {
-        for (var key in paths) {
+        for (let key in paths) {
           if (!key in data.path) {
             data.path[key] = paths[key];
           }
@@ -67,23 +67,25 @@ module.exports.views = {
       data.app.paths = paths;
       // 绑定常用信息
       data.app.versions = sails.config.versions;
-      data.app.debug = sails.config.environment !== 'production' && sails.config.debugs.debug;
+      data.app.debugs = {
+        debug: sails.config.environment !== 'production' && sails.config.debugs.debug,
+      };
       data.app.macros = _.extend({}, sails.config.macros.publicMacros, sails.config.macros.privateMacros);
       data.app.publicMacros = sails.config.macros.publicMacros;
       // 绑定资源url获取方法
       data.app.getJsUrl = function(url) {
         const path = paths.scripts + '/'  + (url.indexOf('.js') < 0 ? url + '.js' : url);
-        const v = data.app.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        const v = data.app.debugs.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
         return path + v;
       };
       data.app.getCssUrl = function(url) {
         const path = paths.styles + '/'  + (url.indexOf('.css') < 0 ? url + '.css' : url);
-        const v = data.app.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        const v = data.app.debugs.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
         return path + v;
       };
       data.app.getImageUrl = function(url) {
         const path = paths.images + '/'  + url;
-        const v = data.app.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
+        const v = data.app.debugs.debug ? '?dev=' + new Date().getTime()  : '?v=' + sails.config.versions[path];
         return path + v;
       };
       //设置underscore过滤器

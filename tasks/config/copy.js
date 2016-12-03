@@ -25,17 +25,27 @@ module.exports = function(grunt) {
     dev: {
       files: [{
         expand: true,
-        cwd: './assets',
-        src: ['**/*.!(scss)'],
+        cwd: 'assets/js-es6/',
+        src: ['dependencies/**', 'libs/**'],
+        dest: 'assets/js/'
+      }, {
+        expand: true,
+        cwd: 'assets',
+        src: ['**/*', '!sass/**', '!js-es6/**'],
         dest: '.tmp/public'
       }]
     },
-    build: {
+    devEs6: {
       files: [{
         expand: true,
-        cwd: '.tmp/public',
+        cwd: 'assets/js-es6',
         src: ['**/*'],
-        dest: 'www'
+        dest: 'assets/js'
+      }, {
+        expand: true,
+        cwd: 'assets',
+        src: ['**/*', '!sass/**', '!js-es6/**'],
+        dest: '.tmp/public'
       }]
     }
   });
