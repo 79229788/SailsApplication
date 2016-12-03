@@ -31,15 +31,16 @@ module.exports = function (grunt) {
       'compass',
       'babel',
       'requirejs:dev',
-      'requirejs-md5'
+      'requirejs-md5',
     ];
   }else {
     tasks = [
       'clean:dev',
       'compass',
       debugs.debugs.realTimeBabel ? 'babel' : null,
-      debugs.debugs.realTimeBabel ? 'copy:dev' : 'copy:devEs6',
-      'watch'
+      debugs.debugs.realTimeBabel ? 'copy:devBabelExcludes' : 'copy:devEs6',
+      'copy:dev',
+      'watch',
     ];
   }
   grunt.registerTask('default', _.compact(tasks));
