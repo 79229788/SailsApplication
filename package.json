@@ -6,7 +6,7 @@
   "keywords": [],
   "dependencies": {
     "bufferhelper": "^0.2.1",
-    "connect-redis": "^3.1.0",
+    "connect-redis": "^3.2.0",
     "dateformat": "^1.0.12",
     "ejs": "2.3.4",
     "grunt": "1.0.1",
