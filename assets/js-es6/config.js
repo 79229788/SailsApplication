@@ -15,7 +15,7 @@ require.config({
     styles: '../styles',
     templates: '../templates',
     //custom
-    combase: 'common/base'
+
 
   },
   shim: {

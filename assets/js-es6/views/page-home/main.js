@@ -1,12 +1,12 @@
 define(function(require, exports, module) {
-  var self;
-  var Backbone = require('backbone');
-  var _ = require('underscore');
-  var $ = require('jquery');
-  var combase = require('combase');
+  let self;
+  const Backbone = require('backbone');
+  const _ = require('underscore');
+  const $ = require('jquery');
+  const base = require('common/base');
 
   //**********************************************************************视图操作
-  var HomeView = Backbone.View.extend({
+  const HomeView = Backbone.View.extend({
     el: "#page",
     //**********初始化
     initialize: function() {
@@ -21,7 +21,7 @@ define(function(require, exports, module) {
       'click .button button'          : 'toClickButton'
     },
     //响应事件
-    toClickButton: combase.debounceClick(function(e) {
+    toClickButton: base.debounceClick(function(e) {
       $(self.el).find('.button span').text('success');
     })
 

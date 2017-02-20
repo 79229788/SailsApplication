@@ -7,7 +7,7 @@ define(['underscore', 'jquery'], function(_, $) {
      */
     debounceClick: function(fun) {
       return  _.debounce(function(e, p1, p2, p3, p4, p5, p6, p7, p8, p9) {
-        var $this;
+        let $this;
         if(e.isJQuery) {
           $this = e;
         }else if (_.isObject(e) && e.type && e.type == 'click'){
@@ -20,7 +20,7 @@ define(['underscore', 'jquery'], function(_, $) {
         }else if ($this && $this.hasClass('loading')) {
           alert('表急，正在加载中，请稍等...');
         }
-      }, 100, true);
+      }, 1000, true);
     }
   }
 });
